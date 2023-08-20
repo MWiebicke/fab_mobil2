@@ -1,0 +1,84 @@
+<!Doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="../1header/header.css">
+    <link rel="stylesheet" href="Profil.css">
+</head>
+<header>
+    <div class="left">
+        <!--<div class="logo">
+            FabBook
+        </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+        <img src="../photos/Fabmobil-Logo-300x300.jpg">
+    </div>
+    <div class="links">
+        <div class="kalender">
+            <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                Kalender
+            </a>
+        </div>
+        <div class="kontakte">
+            <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                Kontakte
+            </a>
+        </div>
+
+        <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+            <a class="headerlink" href="../profilepages/Profil.html">
+                Profil
+            </a>
+        </div>
+        <div class="admin"> <!--DIV FÜR ADMIN-->
+
+        </div>
+    </div>
+    <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+        <img src="/photos/Profilbild.jpg">
+    </div>
+
+</header>
+<!--wenn geöffnet, dann bereits mit Informationen aus Datenbank ausfüllen-->
+
+<body>
+    <img id="bild" src="../photos/Profilbild.jpg">
+
+    <br>
+    <!-- ich räume mal kurz auf -->
+    <form class="bodytext grid-container" id="formular" action="/api/updateuser.php" method="post">
+        <div class="grid-item"><b>Anrede:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="anrede" name="anrede">
+        </div>
+        <div class="grid-item"><b>Name:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="lastname" name="lastname">
+        </div>
+        <div class="grid-item"><b>Vorname:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="firstname" name="firstname">
+        </div>
+        <div class="grid-item"><b>Unternehmen:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="unternehmen"
+                name="unternehmen"></div>
+        <div class="grid-item"><b>Job:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="stellenname"
+                name="stellenname"></div>
+        <div class="grid-item"><b>E-Mail:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="email" name="email">
+        </div>
+        <div class="grid-item"><b>Telefon:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="tel_number"
+                name="tel_number"></div>
+        <div class="grid-item"><b>Beschreibung:</b></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="beschreibung"
+                name="beschreibung"></div>
+        <button name="test" value="1">Speichern</button>
+
+    </form>
+    <br>
+
+    <!-- <a href="Profil.html"> -->
+
+        <script src="./Profil_bearbeiten.js"></script>
+    <!-- </a> -->
+</body>

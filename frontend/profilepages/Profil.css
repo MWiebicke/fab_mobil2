@@ -1,0 +1,46 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 160px auto;
+  padding: 10px;
+}
+
+
+.grid-item {
+  
+  padding: 5px;
+  font-size: 20px;
+  text-align: left;
+}
+
+
+body{
+    font-family: Arial;
+    color: #005d56;
+
+}
+
+a:link {
+    color: #005d56;
+}
+
+a:visited {
+    color: #005d56;
+}
+
+a:active {
+    color: #005d56;
+}
+a:link {
+    text-decoration: none;
+}
+.bodytext{
+    margin-left: 5%;
+    margin-top: 2%;
+}
+#bild{
+    width: 140px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    margin-top: 4%;
+    border-radius: 50%;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FabBook: Admin</title>
+    <link rel="stylesheet" href="../1header/header.css">
+    <link rel="stylesheet" href="adminlanding.css">
+</head>
+<header>
+    <div class="left">
+        <!--<div class="logo">
+            FabBook
+        </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+        <img src="../photos/Fabmobil-Logo-300x300.jpg">
+    </div>
+    <div class="links">
+        <div class="kalender">
+            <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                Kalender
+            </a>
+        </div>
+        <div class="kontakte">
+            <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                Kontakte
+            </a>
+        </div>
+
+        <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+            <a class="headerlink" href="../profilepages/Profil.html">
+                Profil
+            </a>
+        </div>
+        <div class="admin"> <!--DIV FÜR ADMIN-->
+
+        </div>
+    </div>
+    <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+        <img src="/photos/Profilbild.jpg">
+    </div>
+</header>
+<!--braucht dynamische Anzahl an tr je nach Nutzerzahl-Admin-->
+<!--braucht dynamische Links zu Profilbearbeitungsseiten-->
+<!--braucht Deletelink abhängig von Profil-->
+
+<body>
+    <h1>Adminbereich</h1>
+    <div class="table">
+        <!--<div class="acc">
+            <label>Account:</label> 
+            <div>Max Mustermann</div>
+        </div>
+        <div class="edit">
+            <div>Bearbeiten:</div>
+            <div><img src="../photos/edit.png" alt="edit"></div>
+        </div>
+        <div class="del">
+            <div>Löschen:</div>
+            <div><img src="../photos/del.jpg" alt="del"></div>
+        </div>-->
+        <table id="table">
+
+        </table>
+    </div>
+    <div class="newacc">
+        <a href="adminregistration.html">Neuen Account registrieren</a> 
+    </div>
+    <script src="JavaScript/handleUser-interface_admin.js"></script>
+</body>
+
+</html>
