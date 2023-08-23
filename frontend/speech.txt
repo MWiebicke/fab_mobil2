@@ -1,4 +1,0 @@
-frontend: das, was der endnutzer sehen kann
-anfertigung der layouts 
-anfertigung der designs
-einbindung der Farbpalette
