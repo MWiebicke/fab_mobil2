@@ -1,3 +1,3 @@
-//if(isAdmin){
+if(isAdmin){
     const adm = '<div>'
 }

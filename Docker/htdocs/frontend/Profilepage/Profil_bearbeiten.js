@@ -1,5 +1,5 @@
 async function getProfile(){
-    const request = await fetch("/api/getsecureuserdata.php");
+    const request = await fetch("../../php_ausgabe/getsecureuserdata.php");
     const data = await request.json()
 
     console.log(data)
