@@ -32,8 +32,6 @@ services:
             PMA_ABSOLUTE_URI: /phpmyadmin/
     web:
         image: httpd
-        volumes:
-            - "../frontend:/usr/local/apache2/htdocs/"
     proxy:
         image: nginx
         ports:
@@ -46,14 +44,5 @@ services:
             - web
             - phpmyadmin
             - php_api
-    node_api:
-        build: ../VeReRo-Gruppe/JavaScript
-        depends_on:
-            - mariadb
-        environment:
-            - MYSQL_HOST=mariadb
-            - MYSQL_USER=SommerCamp
-            - MYSQL_PASSWORD=Sommer2023
-            - MYSQL_DATABASE=SommerCamp
 volumes:
     phypmyadmin:
