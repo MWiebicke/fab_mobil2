@@ -32,7 +32,7 @@ $sql = "UPDATE Nutzerdaten SET
 // var_dump($_POST);
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: /profilepages/Profil.html");
+    header("Location: ../frontend/profilepages/Profil.html");
   echo "Record updated successfully";
 } else {
   echo "Error updating record: " . $conn->error;

@@ -26,7 +26,7 @@ if ($result->num_rows == 0) {
     session_start();
     while($row = $result->fetch_assoc()) {
       $_SESSION['user_id']= $row["user_id"];  //*user id die in $sql=..... selcetiert wird */;
-      header("Location: /Kalenderpage/kalender4.html");
+      header("Location: ../frontend/Kalenderpage/kalender4.html");
       die();
     }
 }

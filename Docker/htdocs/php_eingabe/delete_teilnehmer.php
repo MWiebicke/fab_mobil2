@@ -19,5 +19,5 @@ if ($conn->connect_error) {
 $sql = "DELETE FROM `Teilnehmer` WHERE user_id = $user_id AND veranstaltungs_id = $veranstaltungs_id";
 $result = $conn->query($sql);
 $conn->close();
-header("Location: /Kalenderpage/kalender4.html");
+header("Location: ../frontend/Kalenderpage/kalender4.html");
 ?>

@@ -19,6 +19,6 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO `Teilnehmer` (`user_id`,`veranstaltungs_id`) VALUES ('$user_id', '$veranstaltungs_id')";
 $result = $conn->query($sql);
 $conn->close();
-header("Location: /Kalenderpage/kalender4.html");
+header("Location: ../frontend/Kalenderpage/kalender4.html");
 
 ?>
