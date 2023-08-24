@@ -7,7 +7,7 @@ async function getDates(){
 
     for (const entry of data) {
         TermineContainer.innerHTML += 
-        `<a href="/workshopseite/workshopseite.html?id=${entry.veranstaltungs_id}">
+        `<a href="../workshopseite/workshopseite.html?id=${entry.veranstaltungs_id}">
             <div class="box">
                 <div class="column">
                     <div id="location" class="location">${entry.ort}</div>
