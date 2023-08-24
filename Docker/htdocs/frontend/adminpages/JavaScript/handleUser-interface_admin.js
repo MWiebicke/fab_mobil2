@@ -2,7 +2,7 @@
 
 function loadUserList(){
     let firstnameList = [];
-    fetch("http://localhost/api/php_ausgabe/Nutzerdaten.php")
+    fetch("../../php_ausgabe/Nutzerdaten.php")
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -87,7 +87,7 @@ loadUserList();
 function deleteUser(){
     let firstnameList = [];
     console.log("Clicked Button to delete User")
-    fetch("http://localhost/api/php_ausgabe/Nutzerdaten.php")
+    fetch("../../php_ausgabe/Nutzerdaten.php")
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -136,7 +136,7 @@ function deleteUser(){
             //deleting database data about the user 
         
             console.log("Der User wurde in der Datenbank gefunden!")
-            let baseURL = "http://localhost/api/php_ausgabe/delete.php";
+            let baseURL = "../../php_ausgabe/delete.php";
 
             let type = "Nutzerdaten";
             let id = lastDigit;
