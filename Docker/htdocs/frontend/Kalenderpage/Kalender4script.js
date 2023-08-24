@@ -1,7 +1,7 @@
 const TermineContainer = document.querySelector("#event");    
 
 async function getDates(){
-    const req = await fetch("/api/php_ausgabe/Veranstaltungen.php");
+    const req = await fetch("../../php_ausgabe/Veranstaltungen.php");
     const data = await req.json();
 
 

@@ -31,7 +31,7 @@
             </div>
 
             <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
-                <a class="headerlink" href="../profilepages/Profil.html">
+                <a class="headerlink" href="../Profilepage/Profil.html">
                     Profil
                 </a>
             </div>
@@ -73,13 +73,13 @@
         <div class="buttons">
         
             <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
-            <form action="/api/insert_teilnehmer.php" method="get">
+            <form action="../../php_eingabe/" method="get">
                 <button type="submit" value="submit">Buchen</button>
                 <input type="hidden" id="veranstaltungs_id" name="veranstaltungs_id" value="1"><br>
                 </form>
             </div>
             <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
-                <form action="/api/delete_teilnehmer.php" method="get">
+                <form action="../../php_eingabe/delete_teilnehmer.php" method="get">
                 <button id="zurueckbutton" type="submit" value="submit">Buchung zurücknehmen</button>
                 <input type="hidden" id="veranstaltungs_id" name="veranstaltungs_id" value="1"><br>
             </form>
