@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../1header/header.css">
+    <link rel="stylesheet" href="Veranstaltung.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <!--<div class="logo">
+                FabBook
+            </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+            <img src="../photos/Fabmobil-Logo-300x300.jpg">
+        </div>
+        <div class="links">
+            <div class="kalender">
+                <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                    Kalender
+                </a>
+            </div>
+            <div class="kontakte">
+                <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                    Kontakte
+                </a>
+            </div>
+
+            <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+                <a class="headerlink" href="../Profilepage/Profil.html">
+                    Profil
+                </a>
+            </div>
+            <div class="admin"> <!--DIV FÜR ADMIN-->
+
+            </div>
+        </div>
+        <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+            <img src="/photos/Profilbild.jpg">
+        </div>
+    </header>
+    <div class="container"><!--ALLES MIT DUMMYS POPULIERT-->
+        <h1></h1>
+        <div class="infos">
+            <div class="info">
+                <div>Datum:</div>
+                <div>Ort:</div>
+                <div>Startzeit:</div>
+                <div>Endzeit</div>
+                <div>Dauer:</div>
+                <div>Spezialisierung:</div>
+                <div> Beschreibung:</div>
+            </div>
+            <div class="Workshopinfo"><!--CONTAINER FÜR WORKSHOPINFO-->
+                <div id="datum"></div>
+                <div id="ort"></div>
+                <div id="startzeit"></div>
+                <div id="endzeit"></div>
+                <div id="dauer"></div>
+                <div id="spezialisierung"></div>
+                <div id="beschreibung"></div>
+            </div>
+        </div>
+        <div class="participants">
+            <div>Moderator:in</div>
+            <div class="participant"><!--CONTAINER FÜR TEILNEHMER-->
+                <div>Jens Beyer</div>
+                <div>Sebstian Piatza</div>
+            </div>
+        </div>
+        <div class="buttons">
+        
+            <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
+                <button id="eventloeschen" onclick="buchen()" type="submit" value="submit">Event löschen</button>
+            </div>
+            <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
+                <button id="eventloeschen" onclick="delbuchen()" type="submit" value="submit">Event löschen</button>
+            </form>
+            </div>
+            <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->
+                <button id="eventloeschen" onclick="delVer()" type="submit" value="submit">Event löschen</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(location.search);
+        document.querySelector("h1").innerText = `Workshop ID ${params.get("id")}`;
+    </script>
+    <script src="./Veranstaltung.js"></script>
+</body>
+
+</html>

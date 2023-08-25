@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: mariadb:3306
--- Erstellungszeit: 18. Aug 2023 um 09:49
--- Server-Version: 10.5.22-MariaDB-1:10.5.22+maria~ubu2004
--- PHP-Version: 8.2.8
+-- Host: host.docker.internal:3306
+-- Erstellungszeit: 25. Aug 2023 um 10:46
+-- Server-Version: 11.1.2-MariaDB
+-- PHP-Version: 8.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `SommerCamp`
+-- Datenbank: `sommercamp`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Nutzerdaten`
+-- Tabellenstruktur für Tabelle `nutzerdaten`
 --
 
-CREATE TABLE `Nutzerdaten` (
+CREATE TABLE `nutzerdaten` (
   `user_id` int(11) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
@@ -42,10 +42,10 @@ CREATE TABLE `Nutzerdaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Daten für Tabelle `Nutzerdaten`
+-- Daten für Tabelle `nutzerdaten`
 --
 
-INSERT INTO `Nutzerdaten` (`user_id`, `firstname`, `lastname`, `passwort`, `rollen_id`, `email`, `tel_number`, `stellenname`, `unternehmen`, `anrede`, `beschreibung`) VALUES
+INSERT INTO `nutzerdaten` (`user_id`, `firstname`, `lastname`, `passwort`, `rollen_id`, `email`, `tel_number`, `stellenname`, `unternehmen`, `anrede`, `beschreibung`) VALUES
 (6, 'admin', 'admin', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 0, 'admin@outlook.com', '', '', '', '', ''),
 (7, 'Jens', 'Beyer', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'jens.beyer@outlook.com', '13456789', '', '', '', ''),
 (9, 'Sebastian', 'Piatza', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'sebastian.piatza@outlook.com', '13456789', '', '', '', ''),
@@ -56,10 +56,10 @@ INSERT INTO `Nutzerdaten` (`user_id`, `firstname`, `lastname`, `passwort`, `roll
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Rollen`
+-- Tabellenstruktur für Tabelle `rollen`
 --
 
-CREATE TABLE `Rollen` (
+CREATE TABLE `rollen` (
   `rollen_id` int(11) NOT NULL,
   `rollen_name` varchar(255) NOT NULL,
   `acc_le` varchar(1) NOT NULL,
@@ -77,10 +77,10 @@ CREATE TABLE `Rollen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Daten für Tabelle `Rollen`
+-- Daten für Tabelle `rollen`
 --
 
-INSERT INTO `Rollen` (`rollen_id`, `rollen_name`, `acc_le`, `acc_sc`, `acc_loe`, `pro_le`, `pro_sc`, `pro_loe`, `ter_le`, `ter_sc`, `ter_loe`, `buc_le`, `buc_sc`, `buc_loe`) VALUES
+INSERT INTO `rollen` (`rollen_id`, `rollen_name`, `acc_le`, `acc_sc`, `acc_loe`, `pro_le`, `pro_sc`, `pro_loe`, `ter_le`, `ter_sc`, `ter_loe`, `buc_le`, `buc_sc`, `buc_loe`) VALUES
 (0, 'admin', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'),
 (1, 'coordinator', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'),
 (2, 'workshopleiter', 'S', 'S', 'S', 'A', 'S', 'S', 'A', 'N', 'N', 'A', 'S', 'S'),
@@ -89,57 +89,58 @@ INSERT INTO `Rollen` (`rollen_id`, `rollen_name`, `acc_le`, `acc_sc`, `acc_loe`,
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Teilnehmer`
+-- Tabellenstruktur für Tabelle `teilnehmer`
 --
 
-CREATE TABLE `Teilnehmer` (
-  `id` int(11) NOT NULL,
+CREATE TABLE `teilnehmer` (
   `user_id` int(11) NOT NULL,
   `veranstaltungs_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Daten für Tabelle `Teilnehmer`
+-- Daten für Tabelle `teilnehmer`
 --
 
-INSERT INTO `Teilnehmer` (`id`, `user_id`, `veranstaltungs_id`) VALUES
-(1, 1, 1);
+INSERT INTO `teilnehmer` (`user_id`, `veranstaltungs_id`) VALUES
+(1, 1),
+(2, 2);
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Veranstaltungen`
+-- Tabellenstruktur für Tabelle `veranstaltungen`
 --
 
-CREATE TABLE `Veranstaltungen` (
+CREATE TABLE `veranstaltungen` (
   `veranstaltungs_id` int(11) NOT NULL,
   `datum` date NOT NULL,
   `ort` varchar(255) NOT NULL,
-  `start_zeit` time DEFAULT NULL,
+  `startzeit` time DEFAULT NULL,
+  `endzeit` time NOT NULL,
   `workshop_id` int(11) NOT NULL,
   `spezialisierung` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Daten für Tabelle `Veranstaltungen`
+-- Daten für Tabelle `veranstaltungen`
 --
 
-INSERT INTO `Veranstaltungen` (`veranstaltungs_id`, `datum`, `ort`, `start_zeit`, `workshop_id`, `spezialisierung`) VALUES
-(1, '2023-08-15', 'Dresden', '12:00:00', 7, 'Kristall ziehen'),
-(6, '2024-08-03', 'Oberschule Kitzscher\r\n', '10:00:00', 1, 'elek. Prüfung'),
-(7, '2023-08-10', 'Oberschule Borna', '08:00:00', 1, 'Reinigen'),
-(8, '2023-10-19', 'Oberschule Frohburg', '09:00:00', 1, 'Qualitätssicherung'),
-(9, '2024-05-24', 'Oberschule Claußnitz\r\n', '13:00:00', 1, 'Metall/Gas abschedung'),
-(12, '2024-04-17', 'Martin – Luther Gymnasium, Frankenberg\r\n', '07:00:00', 1, 'Strukturierung'),
-(13, '2024-07-18', 'Friedrich Rückert Grundschule, Plauen', '15:00:00', 1, 'Packing');
+INSERT INTO `veranstaltungen` (`veranstaltungs_id`, `datum`, `ort`, `startzeit`, `endzeit`, `workshop_id`, `spezialisierung`) VALUES
+(1, '2023-08-15', 'Dresden', '12:48:06', '10:08:00', 7, 'Kristall ziehen'),
+(6, '2024-08-03', 'Oberschule Kitzscher\r\n', '16:56:34', '05:00:00', 1, NULL),
+(7, '2023-08-10', 'Oberschule Borna', '04:56:34', '00:00:00', 1, NULL),
+(8, '2023-10-19', 'Oberschule Frohburg', '13:56:34', '00:00:00', 1, NULL),
+(9, '2024-05-24', 'Oberschule Claußnitz\r\n', '09:34:34', '00:00:00', 1, NULL),
+(12, '2024-04-17', 'Martin – Luther Gymnasium, Frankenberg\r\n', '09:18:34', '00:00:00', 1, NULL),
+(13, '2024-07-18', 'Friedrich Rückert Grundschule, Plauen', '11:48:24', '21:46:00', 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Workshop`
+-- Tabellenstruktur für Tabelle `workshop`
 --
 
-CREATE TABLE `Workshop` (
+CREATE TABLE `workshop` (
   `workshop_id` int(11) NOT NULL,
   `titel` varchar(255) NOT NULL,
   `beschreibung` text NOT NULL,
@@ -147,10 +148,10 @@ CREATE TABLE `Workshop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Daten für Tabelle `Workshop`
+-- Daten für Tabelle `workshop`
 --
 
-INSERT INTO `Workshop` (`workshop_id`, `titel`, `beschreibung`, `dauer`) VALUES
+INSERT INTO `workshop` (`workshop_id`, `titel`, `beschreibung`, `dauer`) VALUES
 (1, 'halbleiter', 'halbleiter', 6),
 (2, 'irgend was anderes', 'irgend was anderes', 8),
 (3, 'Reinigen', 'Reinigen', 6),
@@ -161,33 +162,33 @@ INSERT INTO `Workshop` (`workshop_id`, `titel`, `beschreibung`, `dauer`) VALUES
 --
 
 --
--- Indizes für die Tabelle `Nutzerdaten`
+-- Indizes für die Tabelle `nutzerdaten`
 --
-ALTER TABLE `Nutzerdaten`
+ALTER TABLE `nutzerdaten`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indizes für die Tabelle `Rollen`
+-- Indizes für die Tabelle `rollen`
 --
-ALTER TABLE `Rollen`
+ALTER TABLE `rollen`
   ADD PRIMARY KEY (`rollen_id`);
 
 --
--- Indizes für die Tabelle `Teilnehmer`
+-- Indizes für die Tabelle `teilnehmer`
 --
-ALTER TABLE `Teilnehmer`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `teilnehmer`
+  ADD PRIMARY KEY (`user_id`,`veranstaltungs_id`);
 
 --
--- Indizes für die Tabelle `Veranstaltungen`
+-- Indizes für die Tabelle `veranstaltungen`
 --
-ALTER TABLE `Veranstaltungen`
+ALTER TABLE `veranstaltungen`
   ADD PRIMARY KEY (`veranstaltungs_id`);
 
 --
--- Indizes für die Tabelle `Workshop`
+-- Indizes für die Tabelle `workshop`
 --
-ALTER TABLE `Workshop`
+ALTER TABLE `workshop`
   ADD PRIMARY KEY (`workshop_id`);
 
 --
@@ -195,27 +196,21 @@ ALTER TABLE `Workshop`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `Nutzerdaten`
+-- AUTO_INCREMENT für Tabelle `nutzerdaten`
 --
-ALTER TABLE `Nutzerdaten`
+ALTER TABLE `nutzerdaten`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT für Tabelle `Teilnehmer`
+-- AUTO_INCREMENT für Tabelle `veranstaltungen`
 --
-ALTER TABLE `Teilnehmer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT für Tabelle `Veranstaltungen`
---
-ALTER TABLE `Veranstaltungen`
+ALTER TABLE `veranstaltungen`
   MODIFY `veranstaltungs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT für Tabelle `Workshop`
+-- AUTO_INCREMENT für Tabelle `workshop`
 --
-ALTER TABLE `Workshop`
+ALTER TABLE `workshop`
   MODIFY `workshop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
