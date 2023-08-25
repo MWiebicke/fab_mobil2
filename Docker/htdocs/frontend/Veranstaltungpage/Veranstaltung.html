@@ -58,27 +58,27 @@
             <div class="Workshopinfo"><!--CONTAINER FÜR WORKSHOPINFO-->
                 <div id="datum"></div>
                 <div id="ort"></div>
-                <div id="startzeit"></div>
-                <div id="endzeit"></div>
-                <div id="dauer"></div>
-                <div id="spezialisierung"></div>
-                <div id="beschreibung"></div>
+                <div id="startzeit">x</div>
+                <div id="endzeit">x</div>
+                <div id="dauer">x</div>
+                <div id="spezialisierung">x</div>
+                <div id="beschreibung">x</div>
             </div>
         </div>
         <div class="participants">
             <div>Moderator:in</div>
             <div class="participant"><!--CONTAINER FÜR TEILNEHMER-->
-                <div>Jens Beyer</div>
-                <div>Sebstian Piatza</div>
+                <div id="teilnehmer1">Jens Beyer</div>
+                <div id="teilnehmer2">Sebstian Piatza</div>
             </div>
         </div>
         <div class="buttons">
         
             <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
-                <button id="eventloeschen" onclick="buchen()" type="submit" value="submit">Event löschen</button>
+                <button id="eventloeschen" onclick="buchen()" type="submit" value="submit">Buchen</button>
             </div>
             <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
-                <button id="eventloeschen" onclick="delbuchen()" type="submit" value="submit">Event löschen</button>
+                <button id="eventloeschen" onclick="delbuchen()" type="submit" value="submit">Buchung löschen</button>
             </form>
             </div>
             <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->

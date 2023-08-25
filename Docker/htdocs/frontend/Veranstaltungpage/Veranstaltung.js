@@ -1,7 +1,7 @@
 async function getVeranstraltung(){
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    const request = await fetch("../../php_ausgabe/veranstaltungid.php?id="+id);
+    const request = await fetch("../../php_ausgabe/veranstaltungid.php?veranstaltungs_id="+id);
     const data = (await request.json())[0];
 
     document.getElementById("datum").innerHTML = data.datum;
@@ -11,22 +11,36 @@ async function getVeranstraltung(){
     document.getElementById("dauer").innerHTML = data.dauer;
     document.getElementById("spezialisierung").innerHTML = data.spezialisierung;
     document.getElementById("beschreibung").innerHTML = data.beschreibung;
+} 
+getVeranstraltung()
 
-    
+async function getTeilnehmer(){
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+    const request = await fetch("../../php_ausgabe/teilnehmerget.php?veranstaltungs_id="+id);
+    const data = (await request.json())[0];
+
+    document.getElementById("teilnehmer1").innerHTML = data.firstname;
+    document.getElementById("teilnehmer2").innerHTML = data.lastname;
 }
+getTeilnehmer()
+
 async function buchen(){
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    const request = await fetch("../../php_eingabe/delveranstaltung.php?id="+id);
+    const request = await fetch("../../php_eingabe/Teilnehmerinsert.php?veranstaltungs_id="+id);
 }
-function delbuchen(){
 
+async function delbuchen(){
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+    const request = await fetch("../../php_eingabe/Teilnehmerdel.php?veranstaltungs_id="+id);
 }
-getVeranstraltung()
+
 async function delVer(){
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-const request = await fetch("../../php_eingabe/delveranstaltung.php?id="+id);
+const request = await fetch("../../php_eingabe/delveranstaltung.php?veranstaltungs_id="+id);
 window.open("../Kalenderpage/kalender4.html", "_self")
 const data = await request
 }

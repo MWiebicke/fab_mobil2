@@ -4,9 +4,9 @@ $username = "root";
 $password = "1234";
 $dbname = "SommerCamp";
 
-$veranstaltungsid = $_GET["veranstaltungs_id"];
+$veranstaltungs_id =  $_GET['veranstaltungs_id'];
+
 // Create connection
-//$veranstaltungsid = 1;
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -14,9 +14,9 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-
-$sql = "SELECT * FROM Veranstaltungen LEFT JOIN Workshop on Veranstaltungen.workshop_id = Workshop.workshop_id WHERE veranstaltungs_id = $veranstaltungsid";
+$sql = "SELECT * FROM Teilnehmer LEFT JOIN Nutzerdaten on Teilnehmer.user_id = Nutzerdaten.user_id WHERE Teilnehmer.veranstaltungs_id = $veranstaltungs_id";
 $result = $conn->query($sql);
+
 
 $rows = [];
 
@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 
   echo json_encode($rows);
 } else {
-
+  echo "0 results";
 }
 $conn->close();
 
