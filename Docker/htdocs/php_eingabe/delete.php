@@ -1,7 +1,7 @@
 <?php
 $servername = "host.docker.internal";
-$username = "SommerCamp";
-$password = "Sommer2023";
+$username = "root";
+$password = "1234";
 $dbname = "SommerCamp";
 $type = $_GET["type"];
 $id = $_GET["user_id"];

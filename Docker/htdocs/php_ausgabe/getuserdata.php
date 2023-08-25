@@ -1,8 +1,8 @@
 <?php
 
 $servername = "host.docker.internal";
-$username = "SommerCamp";
-$password = "Sommer2023";
+$username = "root";
+$password = "1234";
 $dbname = "SommerCamp";
 
 // echo '<form id="formular" action="/index.php" method="post"><br>

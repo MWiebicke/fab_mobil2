@@ -1,9 +1,9 @@
 <?php
-        session_start();
-        $servername = "host.docker.internal";
-        $username = "SommerCamp";
-        $password = "Sommer2023";
-        $dbname = "SommerCamp";
+session_start();
+$servername = "host.docker.internal";
+$username = "root";
+$password = "1234";
+$dbname = "SommerCamp";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

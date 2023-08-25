@@ -14,8 +14,10 @@ async function getVeranstraltung(){
 
     
 }
-function buchen(){
-
+async function buchen(){
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+    const request = await fetch("../../php_eingabe/delveranstaltung.php?id="+id);
 }
 function delbuchen(){
 

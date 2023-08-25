@@ -1,8 +1,8 @@
 <?php
 session_start();
 $servername = "host.docker.internal";
-$username = "SommerCamp";
-$password = "Sommer2023";
+$username = "root";
+$password = "1234";
 $dbname = "SommerCamp";
 
 
