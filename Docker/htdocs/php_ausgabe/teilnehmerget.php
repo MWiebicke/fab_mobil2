@@ -5,7 +5,6 @@ $password = "1234";
 $dbname = "SommerCamp";
 
 $veranstaltungs_id =  $_GET['veranstaltungs_id'];
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,8 +14,8 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT * FROM Teilnehmer LEFT JOIN Nutzerdaten on Teilnehmer.user_id = Nutzerdaten.user_id WHERE Teilnehmer.veranstaltungs_id = $veranstaltungs_id";
-$result = $conn->query($sql);
 
+$result = $conn->query($sql);
 
 $rows = [];
 
@@ -28,8 +27,8 @@ if ($result->num_rows > 0) {
   }
 
   echo json_encode($rows);
+
 } else {
-  echo "0 results";
 }
 $conn->close();
 

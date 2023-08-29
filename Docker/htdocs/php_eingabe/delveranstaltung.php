@@ -4,7 +4,7 @@ $username = "root";
 $password = "1234";
 $dbname = "SommerCamp";
 
-$veranstaltungsid = $_GET["id"];
+$veranstaltungsid = $_GET["veranstaltungs_id"];
 // Create connection
 //$veranstaltungsid = 1;
 $conn = new mysqli($servername, $username, $password, $dbname);
