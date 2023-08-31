@@ -6,9 +6,9 @@ $password = "1234";
 $dbname = "SommerCamp";
 
 $user_id = $_SESSION['user_id'];
-$user_id = 2;
+//$user_id = 2;
 $veranstaltungs_id =  $_GET['veranstaltungs_id'];
-$veranstaltungs_id = 1;
+//$veranstaltungs_id = 1;
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

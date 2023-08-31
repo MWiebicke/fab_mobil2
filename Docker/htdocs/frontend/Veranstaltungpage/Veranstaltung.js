@@ -6,10 +6,10 @@ async function getVeranstraltung(){
 
     document.getElementById("datum").innerHTML = data.datum;
     document.getElementById("ort").innerHTML = data.ort;
-    document.getElementById("startzeit").innerHTML = data.startzeit;
+    document.getElementById("startzeit").innerHTML = isEmpty(data.startzeit);
     document.getElementById("endzeit").innerHTML = data.endzeit;
     document.getElementById("dauer").innerHTML = data.dauer;
-    document.getElementById("spezialisierung").innerHTML = data.spezialisierung;
+    document.getElementById("spezialisierung").innerHTML = isEmpty(data.spezialisierung);
     document.getElementById("beschreibung").innerHTML = data.beschreibung;
 } 
 getVeranstraltung()
@@ -44,3 +44,11 @@ const request = await fetch("../../php_eingabe/delveranstaltung.php?veranstaltun
 window.open("../Kalenderpage/kalender4.html", "_self")
 const data = await request
 }
+
+function isEmpty(nullvalue) {
+    if(nullvalue !== null){
+        return nullvalue
+    }else {
+        nullvalue = "0"
+    }
+  }

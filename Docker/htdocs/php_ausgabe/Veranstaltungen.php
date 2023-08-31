@@ -15,6 +15,9 @@ if ($conn->connect_error) {
 
 
 $sql = "SELECT * FROM `veranstaltungen`";
+if (!$conn -> query($sql)) {
+  echo("Error description: " . $conn -> error);
+}
 $result = $conn->query($sql);
 
 $rows = [];
@@ -22,13 +25,13 @@ $rows = [];
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-
+    //var_dump($row);
     $rows[] = $row;
   }
 
   echo json_encode($rows);
+
 } else {
-  echo "0 results";
 }
 $conn->close();
 

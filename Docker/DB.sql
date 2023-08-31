@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: host.docker.internal:3306
--- Erstellungszeit: 25. Aug 2023 um 10:46
+-- Erstellungszeit: 31. Aug 2023 um 15:33
 -- Server-Version: 11.1.2-MariaDB
 -- PHP-Version: 8.2.9
 
@@ -46,12 +46,14 @@ CREATE TABLE `nutzerdaten` (
 --
 
 INSERT INTO `nutzerdaten` (`user_id`, `firstname`, `lastname`, `passwort`, `rollen_id`, `email`, `tel_number`, `stellenname`, `unternehmen`, `anrede`, `beschreibung`) VALUES
+(1, 'Valena', 'Ammon', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'valena.ammon@outlook.com', '1356789', '', '', '', ''),
+(2, 'Annett', 'Loeser', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'annett.loeser@outlook.com', '', '', '', '', ''),
 (6, 'admin', 'admin', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 0, 'admin@outlook.com', '', '', '', '', ''),
 (7, 'Jens', 'Beyer', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'jens.beyer@outlook.com', '13456789', '', '', '', ''),
 (9, 'Sebastian', 'Piatza', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'sebastian.piatza@outlook.com', '13456789', '', '', '', ''),
-(10, 'Christian', 'Zöllner', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'christian.zöllner@outlook.com', '123456789', '', '', '', ''),
-(11, 'Annett', 'Löser', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'annett.löser@outlook.com', '', '', '', '', ''),
-(12, 'Valena', 'Ammon', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'valena.ammon@outlook.com', '1356789', '', '', '', '');
+(10, 'Christian', 'Zoellner', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'christian.zoellner@outlook.com', '123456789', '', '', '', ''),
+(13, '', '', '6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918', 0, 'q@q', '', '', '', '1221', ''),
+(14, 'ss', 'gaame', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 0, 'matthes@a', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -103,7 +105,10 @@ CREATE TABLE `teilnehmer` (
 
 INSERT INTO `teilnehmer` (`user_id`, `veranstaltungs_id`) VALUES
 (1, 1),
-(2, 2);
+(1, 2),
+(2, 1),
+(2, 2),
+(14, 6);
 
 -- --------------------------------------------------------
 
@@ -130,9 +135,9 @@ INSERT INTO `veranstaltungen` (`veranstaltungs_id`, `datum`, `ort`, `startzeit`,
 (6, '2024-08-03', 'Oberschule Kitzscher\r\n', '16:56:34', '05:00:00', 1, NULL),
 (7, '2023-08-10', 'Oberschule Borna', '04:56:34', '00:00:00', 1, NULL),
 (8, '2023-10-19', 'Oberschule Frohburg', '13:56:34', '00:00:00', 1, NULL),
-(9, '2024-05-24', 'Oberschule Claußnitz\r\n', '09:34:34', '00:00:00', 1, NULL),
-(12, '2024-04-17', 'Martin – Luther Gymnasium, Frankenberg\r\n', '09:18:34', '00:00:00', 1, NULL),
-(13, '2024-07-18', 'Friedrich Rückert Grundschule, Plauen', '11:48:24', '21:46:00', 1, NULL);
+(9, '2024-05-24', 'Oberschule Claussnitz\r\n', '09:34:34', '00:00:00', 1, NULL),
+(12, '2024-04-17', 'Martin  Luther Gymnasium, Frankenberg\r\n', '09:18:34', '00:00:00', 1, NULL),
+(13, '2024-07-18', 'Friedrich Rueckert Grundschule, Plauen', '11:48:24', '21:46:00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -199,7 +204,7 @@ ALTER TABLE `workshop`
 -- AUTO_INCREMENT für Tabelle `nutzerdaten`
 --
 ALTER TABLE `nutzerdaten`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT für Tabelle `veranstaltungen`
