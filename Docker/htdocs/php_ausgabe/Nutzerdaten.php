@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 
 
-$sql = "SELECT * FROM `Nutzerdaten`";
+$sql = "SELECT firstname, lastname, rollen_id, email, tel_number, stellenname, unternehmen, anrede, beschreibung FROM `Nutzerdaten`";
 $result = $conn->query($sql);
 
 

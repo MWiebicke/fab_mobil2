@@ -31,12 +31,14 @@ async function buchen(){
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
     const request = await fetch("../../php_eingabe/Teilnehmerinsert.php?veranstaltungs_id="+id);
+    location.reload(); 
 }
 
 async function delbuchen(){
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
     const request = await fetch("../../php_eingabe/Teilnehmerdel.php?veranstaltungs_id="+id);
+    location.reload(); 
 }
 
 async function delVer(){
