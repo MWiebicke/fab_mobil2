@@ -33,7 +33,6 @@ echo $jason;
 
 $sql2 = "INSERT INTO Teilnehmer (user_id, veranstaltungs_id)
 VALUES ( $user_id, $veranstaltungs_id)";
-$result2 = $conn->query($sql2);
 
 if ($conn->query($sql2) === TRUE) {
 } else {
