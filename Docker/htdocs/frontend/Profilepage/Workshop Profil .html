@@ -7,40 +7,14 @@
     <link rel="stylesheet" href="WorkshopProfil.css">
     <link rel="stylesheet" href="../1header/header.css">
     <title>FabBook: Workshop</title>
-
+    <script src="../../jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("../1header/header.html"); 
+    });
+    </script> 
 </head>
-<header>
-    <div class="left">
-        <!--<div class="logo">
-            FabBook
-        </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
-        <img src="../photos/Fabmobil-Logo-300x300.jpg">
-    </div>
-    <div class="links">
-        <div class="kalender">
-            <a class="headerlink" href="../Kalenderpage/kalender4.html">
-                Kalender
-            </a>
-        </div>
-        <div class="kontakte">
-            <a class="headerlink" href="../Kontaktpage/Kontakte.html">
-                Kontakte
-            </a>
-        </div>
-
-        <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
-            <a class="headerlink" href="../Profilepage/Profil.html">
-                Profil
-            </a>
-        </div>
-        <div class="admin"> <!--DIV FÜR ADMIN-->
-
-        </div>
-    </div>
-    <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
-        <img src="/photos/Profilbild.jpg">
-    </div>
-</header>
+<div id="includedContent"></div>
 
 <body style="font-family: Arial;">
     <h1 style="text-align:center">Workshop ...</h1>
@@ -48,17 +22,17 @@
         <br>
         <div style="width: 40%; float:right;">
             <img src="https://fabmobil.org/wp-content/uploads/techcycles_header-1.png" style="width: 500px" ;
-                style="height: 500px" ; align ="right">
+                style="height: 500px ; align:right">
         </div>
         <div style="width: 40%; float:left; overflow-wrap: break-word;">
             <!---Beispiel für ein Bild--->
-            <p align="left"><b>Beschreibung:</b> z.B hier muss ein Text hin ...
+            <p style="align-items: left;"><b>Beschreibung:</b> z.B hier muss ein Text hin ...
                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             </p>
-            <p align="left"><b>Dauer:</b> z.B. 3 Tage a 3-6 Stunden </p>
-            <p align="left"><b>Mindestalter:</b> z.B. ab 8.Klasse </p>
-            <p align="left"><b>Level:</b> z.B. Anfänger-Fortgeschrittene</p>
-            <p align="left"><b>Anzahl Betreuer:</b> z.B. max 1:8</p>
+            <p style="align-items: left;"><b>Dauer:</b> z.B. 3 Tage a 3-6 Stunden </p>
+            <p style="align-items: left;"><b>Mindestalter:</b> z.B. ab 8.Klasse </p>
+            <p style="align-items: left;"><b>Level:</b> z.B. Anfänger-Fortgeschrittene</p>
+            <p style="align-items: left;"><b>Anzahl Betreuer:</b> z.B. max 1:8</p>
             <div class="dropdown">
                 <button class="dropbtn"><b>Personal:</b></button>
                 <div class="dropdown-content">
