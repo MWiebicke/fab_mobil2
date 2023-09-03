@@ -1,0 +1,20 @@
+Logout
+
+
+Adminpage:
+    Rechtekontrolle php
+    Rechtekontrolle js
+        -Page Veranstaltung
+
+        -Page Workshop
+            -Workshop sehen
+            -Workshop erstellen
+            -Workshop löschen
+            -Workshop bearbeiten
+        -Page Nutzer
+            -Nutzer sehen
+            /Nutzer erstellen
+            -Nutzer löschen
+            -Nutzer bearbeiten
+            
+            

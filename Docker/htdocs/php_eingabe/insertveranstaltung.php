@@ -25,5 +25,5 @@ $sql = "INSERT INTO `Veranstaltungen` (`datum`,`ort`, `startzeit`,`endzeit`,`wor
 $conn->query($sql);
 
 $conn->close();
-header("Location: ../frontend/Kalenderpage/hinzufuegen.html");
+header("Location: ../frontend/Kalenderpage/Veranstaltung_hinzufuegen.html");
 ?>

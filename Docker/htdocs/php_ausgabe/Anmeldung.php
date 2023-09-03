@@ -21,7 +21,7 @@ $sql = "SELECT user_id FROM Nutzerdaten WHERE email = '$email' AND passwort = '$
 $result = $conn->query($sql);
 if ($result->num_rows == 0) {
   
-    header("Location: /loginpage/Anmeldung.html");
+    header("Location: /Loginpage/Anmeldung.html");
 } else {
     session_start();
     while($row = $result->fetch_assoc()) {
