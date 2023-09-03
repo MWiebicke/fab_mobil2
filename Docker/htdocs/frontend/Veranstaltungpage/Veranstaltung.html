@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="../1header/header.css">
     <link rel="stylesheet" href="Veranstaltung.css">
           
-  <script src="../../jquery.js"></script> 
-  <script> 
-  $(function(){
-    $("#includedContent").load("../1header/header.html"); 
-  });
-  </script> 
+     
+ 
 </head>
 
 <body>
-    <div id="includedContent"></div>
+    <div id="header"> </div>
     
     <div class="container"><!--ALLES MIT DUMMYS POPULIERT-->
         <h1></h1>
@@ -67,6 +63,7 @@
         const params = new URLSearchParams(location.search);
         document.querySelector("h1").innerText = `Workshop ID ${params.get("id")}`;
     </script>
+    <script src="../header.js"></script>
     <script src="./Veranstaltung.js"></script>
 </body>
 
