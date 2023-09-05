@@ -4,7 +4,9 @@ $username = "root";
 $password = "1234";
 $dbname = "SommerCamp";
 
+$user_id = $_GET["user_id"];
 // Create connection
+//$veranstaltungsid = 1;
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -13,24 +15,9 @@ if ($conn->connect_error) {
 }
 
 
-
-$sql = "SELECT firstname, lastname, rollen_id, email, tel_number, stellenname, unternehmen, anrede, beschreibung, user_id FROM `Nutzerdaten`";
+$sql = "DELETE FROM `nutzerdaten` WHERE user_id = $user_id";
 $result = $conn->query($sql);
 
-
-$rows = [];
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-
-    $rows[] = $row;
-  }
-
-  echo json_encode($rows);
-} else {
-  echo "0 results";
-}
 $conn->close();
 
 ?>

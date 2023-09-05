@@ -14,11 +14,26 @@ async function getKontacts(){
         </div>
         <div class="text">
           <details>
-            <summary>${entry.firstname}  ${entry.lastname}</summary>
-            <p>Telefonnummer:${entry.tel_number}</p>
-            <p>Email:${entry.email}</p>
-            <p>Unternehmen:${entry.unternehmen}</p>
-            <p>Job:${entry.stellenname}</p>
+            <summary>${entry.anrede} ${entry.firstname}  ${entry.lastname}
+            <button onclick="deleteuser(${entry.user_id})" type="submit" value="submit">Nutzer Löschen</button></summary>
+            <table>
+            <tr>
+                <td>Email</td>
+                <td>${entry.email}</td>
+                <td>Tel.</td>
+                <td>${entry.tel_number}</td>
+            </tr>
+            <tr>
+                <td>Stelle</td>
+                <td>${entry.stellenname}</td>
+                <td>Unternehmen</td>
+                <td>${entry.unternehmen}</td>
+            </tr>
+            <tr>
+                <td>Beschreibung</td>
+                <td colspan="3"${entry.beschreibung}></td>
+            </tr>
+        </table>
           </details>
         </div>
       </div>`;
@@ -26,3 +41,8 @@ async function getKontacts(){
 }
 
 getKontacts();
+
+async function deleteuser(userid){
+    const request = await fetch("../../php_eingabe/deleteuser.php?user_id="+userid);
+    location.reload(); 
+}

@@ -1,5 +1,5 @@
 async function getProfile(){
-    const request = await fetch("../../php_ausgabe/headerrollen.php");
+    const request = await fetch("../../php_ausgabe/profildatenid.php");
     const data = (await request.json())[0];
 
     console.log(data)
