@@ -21,17 +21,17 @@ async function getHeader(){
                 </a>
             </div>
             <div class="einzeln">
-                <a class="headerlink" href="../Adminpage/Nutzer/Nutzer.html">
+                <a class="headerlink" href="../Adminpage/Nutzer.html">
                     Nutzer
                 </a>
             </div>
             <div class="einzeln">
-                <a class="headerlink" href="../Adminpage/Veranstaltung/Veranstaltung.html">
+                <a class="headerlink" href="../Adminpage/Veranstaltung.html">
                     Veranstaltung
                 </a>
             </div>
             <div class="einzeln">
-                <a class="headerlink" href="../Adminpage/Workshop/Workshop.html">
+                <a class="headerlink" href="../Adminpage/Workshop.html">
                     Workshop
                 </a>     
             </div>
