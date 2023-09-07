@@ -15,7 +15,8 @@ async function getKontacts(){
         <div class="text">
           <details>
             <summary>${entry.anrede} ${entry.firstname}  ${entry.lastname}
-            <button onclick="deleteuser(${entry.user_id})" type="submit" value="submit">Nutzer Löschen</button></summary>
+            <button onclick="deleteuser(${entry.user_id})" type="submit" value="submit">Nutzer Löschen</button>
+            <button onclick="benutzerbearbeiten(${entry.user_id})" type="submit" value="submit">Nutzer bearbeiten</button></summary>
             <table>
             <tr>
                 <td>Email</td>
@@ -42,7 +43,12 @@ async function getKontacts(){
 
 getKontacts();
 
-async function deleteuser(userid){
-    const request = await fetch("../../php_eingabe/deleteuser.php?user_id="+userid);
+async function deleteuser(user_id){
+    const request = await fetch("../../php_eingabe/deleteuser.php?user_id="+user_id);
     location.reload(); 
 }
+async function benutzerbearbeiten(user_id){
+  window.location.href = "./benutzerbearbeiten.html?user_id="+user_id;
+
+}
+
