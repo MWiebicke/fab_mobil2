@@ -1,21 +1,20 @@
 <?php
-session_start();
 $servername = "host.docker.internal";
 $username = "root";
 $password = "1234";
 $dbname = "SommerCamp";
 
-
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-
+// Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
 
 
-$sql = "SELECT `user_id`,`firstname`,`lastname`,`rollen_id`,`email`,`tel_number`,`stellenname`,`unternehmen`, `anrede`,`anrede`,`beschreibung` FROM `Nutzerdaten` WHERE user_id = " . $_SESSION['user_id'];
+$sql = "SELECT firstname, lastname, email, tel_number, stellenname, unternehmen FROM `Nutzerdaten`";
 $result = $conn->query($sql);
 
 

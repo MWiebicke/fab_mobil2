@@ -1,7 +1,7 @@
 const TermineContainer = document.querySelector("#event");    
 
 async function getDates(){
-    const req = await fetch("../../php_ausgabe/Veranstaltungen.php");
+    const req = await fetch("../../php_ausgabe/KalenderVeranstaltungData.php");
     const data = await req.json();
 
 
@@ -14,7 +14,7 @@ async function getDates(){
                     <div id="workshop" class="workshop">${entry.spezialisierung} </div>
                 </div>
                 <div class="column">
-                    <div class="dateandtime" id="dateandtime">${entry.datum}, ${entry.start_zeit}</div>
+                    <div class="dateandtime" id="dateandtime">${entry.datum}, ${entry.startzeit}</div>
                 </div>
             </div>
         </a>`;

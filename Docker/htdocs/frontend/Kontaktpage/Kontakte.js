@@ -1,7 +1,7 @@
 const TermineContainer = document.querySelector("#event");    
 
 async function getKontacts(){
-    const req = await fetch("../../php_ausgabe/Nutzerdaten.php");
+    const req = await fetch("../../php_ausgabe/KontakteData.php");
     const data = await req.json();
 
 

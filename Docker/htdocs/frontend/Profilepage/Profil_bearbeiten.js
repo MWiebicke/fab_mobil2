@@ -1,5 +1,5 @@
 async function getProfile(){
-    const request = await fetch("../../php_ausgabe/profildatenid.php");
+    const request = await fetch("../../php_ausgabe/ProfilUserData.php");
     const data = (await request.json())[0];
 
     document.querySelector("#anrede").value = data.anrede

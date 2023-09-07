@@ -1,7 +1,7 @@
 async function benutzerbearbeiten(){
 let params = new URLSearchParams(document.location.search);
 let user_id = params.get("user_id");
-const request = await fetch("../../php_ausgabe/AdminUserUpdate.php?user_id="+user_id);
+const request = await fetch("../../php_ausgabe/AdminUserUpdateData.php?user_id="+user_id);
 const data = (await request.json())[0];
 
 document.querySelector("#anrede").value = data.anrede
