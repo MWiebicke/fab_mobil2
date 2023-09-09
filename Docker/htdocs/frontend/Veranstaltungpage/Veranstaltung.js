@@ -30,24 +30,18 @@ getTeilnehmer()
 async function buchen(){
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    const request = await fetch("../../php_eingabe/Teilnehmerinsert.php?veranstaltungs_id="+id);
+    const request = await fetch("../../php_eingabe/VeranstaltungTeilnehmerCreate.php?veranstaltungs_id="+id);
     location.reload(); 
 }
 
 async function delbuchen(){
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    const request = await fetch("../../php_eingabe/Teilnehmerdel.php?veranstaltungs_id="+id);
+    const request = await fetch("../../php_eingabe/VeranstaltungTeilnehmerDelete.php?veranstaltungs_id="+id);
     location.reload(); 
 }
 
-async function delVer(){
-    let params = new URLSearchParams(document.location.search);
-    let id = params.get("id");
-const request = await fetch("../../php_eingabe/delveranstaltung.php?veranstaltungs_id="+id);
-window.open("../Kalenderpage/kalender4.html", "_self")
-const data = await request
-}
+
 
 function isEmpty(nullvalue) {
     if(nullvalue !== null){

@@ -44,7 +44,7 @@ async function getKontacts(){
 getKontacts();
 
 async function deleteuser(user_id){
-    const request = await fetch("../../php_eingabe/deleteuser.php?user_id="+user_id);
+    const request = await fetch("../../php_eingabe/AdminUserDelete.php?user_id="+user_id);
     location.reload(); 
 }
 async function benutzerbearbeiten(user_id){
