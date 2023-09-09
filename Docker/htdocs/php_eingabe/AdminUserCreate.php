@@ -45,7 +45,6 @@ if ($passwort==NULL){
   $errorm .= "Passwort eingeben ";
   }
 
-echo $tel_number;
 if ($tel_number=NULL)
   {$tel_number=0;}
 
@@ -57,7 +56,7 @@ if ($errorm ==""){
     VALUES ('$passwort', '$rollen_id', '$email')";
 
     if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
+      header("Location: ../frontend/Adminpage/Nutzer.html");
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }

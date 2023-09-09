@@ -4,12 +4,12 @@ $username = "root";
 $password = "1234";
 $dbname = "SommerCamp";
 
-$datum = $_GET["datum"];
-$ort = $_GET["ort"];
-$startzeit = $_GET["startzeit"];
-$endzeit = $_GET["endzeit"];
+$datum = $_POST["datum"];
+$ort = $_POST["ort"];
+$startzeit = $_POST["startzeit"];
+$endzeit = $_POST["endzeit"];
 $workshop = 1;
-$spezialisierungen = $_GET["spezialisierungen"];
+$spezialisierungen = $_POST["spezialisierungen"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -25,5 +25,5 @@ $sql = "INSERT INTO `Veranstaltungen` (`datum`,`ort`, `startzeit`,`endzeit`,`wor
 $conn->query($sql);
 
 $conn->close();
-header("Location: ../frontend/Kalenderpage/Veranstaltung_hinzufuegen.html");
+header("Location: ../frontend/Adminpage/Veranstaltung.html");
 ?>

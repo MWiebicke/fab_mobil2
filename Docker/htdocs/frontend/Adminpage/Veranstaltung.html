@@ -15,46 +15,45 @@
         <div class="TitelWorkshop">
             <h1> Veranstaltung hinzufügen</h1>
         </div>
+
+        <form id="formular" action="../../../php_eingabe/AdminVeranstaltungCreate.php" method="post">
         <div class="eingabe">
             <div class="label">
             <label> Datum:</label>
             <br>
-      
             <label> Ort:</label>
-            
             <br>
             <label>Startzeit:</label>
-            
-    <br>
-            <label> Dauer:</label>
             <br>
-            <label> Spezialisierung:</label>
+            <label>Endzeite:</label>
             <br>
-            <label> Beschreibung:</label>
+            <label>Workshop:</label>
+            <br>
+            <label>Spezialisierung:</label>
             </div>
             <div class="input">
-                <input type="text">
+                <input type="date" name="datum">
                 <br>
-                <input type="text">
+                <input type="text" name="ort">
                 <br>
-                <input type="text">
+                <input type="time" name="startzeit">
                 <br>
-                <input type="text">
+                <input type="time" name="endzeit">
                 <br>
-                <input type="text">
+                <input type="text" name="workshop">
                 <br>
-                <input type="text">
-
+                <input type="text" name="spezialisierung">
             </div>
-        
         </div>
         <div class="buttons"></div>
-        <button id="hinzufuegenbutton"> Hinzufügen</button>
-        <button id="abbrechenbutton"> Abbrechen</button>
+            <button id="hinzufuegenbutton"name="sent" value="1" type="submit"> Hinzufügen</button>
+        </form>
+        </div>
     </div>
     </div>
 
-
+    <div id="event"></div>
+    <script src="./Veranstaltung.js"></script>
     <script src="../header.js"></script>
 </body>
 
