@@ -25,10 +25,10 @@ async function getDates(){
 getDates();
 
 async function deleteveranstaltung(veranstaltungs_id){
-    const request = await fetch("../../php_eingabe/AdminVeranstaltungDelete.php?user_id="+veranstaltungs_id);
+    const request = await fetch("../../php_eingabe/AdminVeranstaltungDelete.php?veranstaltungs_id="+veranstaltungs_id);
     location.reload(); 
 }
 async function veranstaltungbearbeiten(veranstaltungs_id){
-  window.location.href = "./veranstaltungbearbeiten.html?user_id="+veranstaltungs_id;
+  window.location.href = "./veranstaltungbearbeiten.html?veranstaltungs_id="+veranstaltungs_id;
 
 }
