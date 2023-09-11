@@ -1,19 +1,7 @@
 <?php
-$servername = "host.docker.internal";
-$username = "root";
-$password = "1234";
-$dbname = "SommerCamp";
+include '../Connstart.php';
 
 $veranstaltungsid = $_GET["veranstaltungs_id"];
-// Create connection
-//$veranstaltungsid = 1;
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
 
 $sql = "SELECT * FROM Veranstaltungen LEFT JOIN Workshop on Veranstaltungen.workshop_id = Workshop.workshop_id WHERE veranstaltungs_id = $veranstaltungsid";
 $result = $conn->query($sql);

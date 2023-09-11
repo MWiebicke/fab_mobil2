@@ -1,17 +1,5 @@
 <?php
-$servername = "host.docker.internal";
-$username = "root";
-$password = "1234";
-$dbname = "SommerCamp";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
+include '../Connstart.php';
 
 $sql = "SELECT `veranstaltungs_id`,`datum`,`ort`,`startzeit`,`spezialisierung`,`workshop_id` FROM `veranstaltungen`";
 if (!$conn -> query($sql)) {
