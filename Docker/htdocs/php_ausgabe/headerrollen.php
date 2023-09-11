@@ -7,19 +7,7 @@ $sql = "SELECT rollen.rollen_id,user_id FROM rollen LEFT JOIN nutzerdaten on Nut
 //echo $sql;
 $result = $conn->query($sql);
 
-$rows = [];
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-
-    $rows[] = $row;
-  }
-
-  echo json_encode($rows);
-} else {
-  //echo "0 results";
-}
+include '../Jsoncreate.php';
 $conn->close();
 
 ?>
