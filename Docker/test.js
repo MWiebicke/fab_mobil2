@@ -20,3 +20,19 @@ const request = await fetch("../../php_eingabe/AdminVeranstaltungDelete.php?vera
 window.open("../Kalenderpage/kalender4.html", "_self")
 const data = await request
 }
+
+<script src="/ads.js" type="text/javascript"></script>
+<script type="text/javascript">
+if( document.getElementById('PR44EPxgRGrsoVe') ){
+  alert('Es ist kein AdBlocker aktiv!');
+} else {
+  alert('AdBlocker ist aktiv und Werbung wird blockiert!');
+}
+</script>
+
+
+ads.js:
+var e=document.createElement('div');
+e.id='PR44EPxgRGrsoVe';
+e.style.display='none';
+document.body.appendChild(e);
