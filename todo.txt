@@ -18,4 +18,6 @@ Adminpage:
             -Workshop erstellen
             -Workshop löschen
             -Workshop bearbeiten
-   
+ security:
+    sql injection
+
