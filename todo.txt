@@ -1,5 +1,12 @@
 Logout
 workshopauswahl
+Cookies
+Werbung
+Erkennung Adblogger
+
+Newsletter
+Emails
+Pushbenachrichtigungen
 
 Adminpage:
     Rechtekontrolle php
@@ -11,5 +18,4 @@ Adminpage:
             -Workshop erstellen
             -Workshop löschen
             -Workshop bearbeiten
-
-            
+   
