@@ -1,6 +1,8 @@
 <?php
 include '../Connstart.php';
-session_start();
+include '../Rechte.php';
+
+if(rechte("acc_le","A",$conn)){
 
 $user_id = $_GET["user_id"];
 
@@ -8,6 +10,7 @@ $sql = "SELECT `user_id`,`firstname`,`lastname`,`rollen_id`,`email`,`tel_number`
 $result = $conn->query($sql);
 
 include '../Jsoncreate.php';
+}
 $conn->close();
 
 ?>
