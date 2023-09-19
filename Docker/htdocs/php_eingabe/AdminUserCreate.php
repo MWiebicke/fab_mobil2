@@ -1,6 +1,8 @@
 <?php
 include '../Connstart.php';
+include '../Rechte.php';
 
+if(rechte("acc_sc","A",$conn)){
 $rolle = $_POST['rolle'];
 
 $Rollen = "SELECT rollen_id, rollen_name FROM Rollen";
@@ -49,6 +51,7 @@ if ($errorm ==""){
     }
 }else{
   echo $errorm;
+}
 }
 $conn->close();
 ?>

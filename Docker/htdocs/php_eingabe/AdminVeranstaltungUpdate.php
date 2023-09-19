@@ -1,6 +1,8 @@
 <?php
 include '../Connstart.php';
+include '../Rechte.php';
 
+if(rechte("ver_sc","A",$conn)){
 $veranstaltungs_id = $_GET['veranstaltungs_id'];
 
 $sql = "UPDATE Veranstaltungen SET
@@ -22,5 +24,5 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Error updating record: " . $conn->error;
 }
-
+}
 $conn->close();

@@ -1,7 +1,8 @@
 <?php
 include '../Connstart.php';
-session_start();
+include '../Rechte.php';
 
+if(rechte("ver_sc","S",$conn)){
 $user_id = $_SESSION['user_id'];
 $veranstaltungs_id =  $_GET['veranstaltungs_id'];
 
@@ -26,6 +27,7 @@ VALUES ( $user_id, $veranstaltungs_id)";
 if ($conn->query($sql2) === TRUE) {
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
+}
 }
 $conn->close();
 ?>

@@ -1,6 +1,8 @@
 <?php
 include '../Connstart.php';
+include '../Rechte.php';
 
+if(rechte("ver_sc","A",$conn)){
 $datum = $_POST["datum"];
 $ort = $_POST["ort"];
 $startzeit = $_POST["startzeit"];
@@ -12,7 +14,7 @@ $sql = "INSERT INTO `Veranstaltungen` (`datum`,`ort`, `startzeit`,`endzeit`,`wor
         VALUES ('$datum','$ort','$startzeit:00','$endzeit:00','$workshop','$spezialisierungen')";
 
 $conn->query($sql);
-
+}
 $conn->close();
 header("Location: ../frontend/Adminpage/Veranstaltung.html");
 ?>

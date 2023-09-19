@@ -1,7 +1,8 @@
 <?php
 include '../Connstart.php';
-session_start();
+include '../Rechte.php';
 
+if(rechte("acc_sc","S",$conn)){
 $lastname = $_POST['lastname'];
 
 $sql = "UPDATE Nutzerdaten SET
@@ -25,5 +26,5 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Error updating record: " . $conn->error;
 }
-
+}
 $conn->close();
