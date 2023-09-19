@@ -1,4 +1,3 @@
-
 <?php
 include '../Connstart.php';
 include '../Rechte.php';

@@ -8,7 +8,6 @@ if(rechte("acc_le","A",$conn)){
 
     include '../Jsoncreate.php';
 }
-
 $conn->close();
 
 ?>
