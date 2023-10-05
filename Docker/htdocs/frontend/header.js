@@ -31,7 +31,7 @@ async function getHeader(){
                 </a>
             </div>
             <div class="einzeln">
-                <a class="headerlink" href="../Adminpage/Workshop.html">
+                <a class="headerlink" href="../Adminpage/workshop.html">
                     Workshop
                 </a>     
             </div>

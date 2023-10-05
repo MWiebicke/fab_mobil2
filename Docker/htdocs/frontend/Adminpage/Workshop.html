@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Workshop hinzufügen</title>
+    <link rel="stylesheet" href="Workshop.css">
+    <link rel="stylesheet" href="../1header/header.css">
+</head>
+
+<body>
+    <div id="header"> </div>
+    <div class="alles">
+        <div class="TitelWorkshop">
+            <h1> Workshop hinzufügen</h1>
+        </div>
+
+        <form id="formular" action="../../../php_eingabe/AdminWorkshopCreate.php" method="post">
+        <div class="eingabe">
+            <div class="label">
+            <label> Titel:</label>
+            <br>
+            <label> Beschreibung</label>
+            <br>
+            <label>Startzeit:</label>
+            </div>
+            <div class="input">
+                <input type="titel" name="titel">
+                <br>
+                <input type="beschreibung" name="beschreibung">
+                <br>
+                <input type="dauer" name="dauer">
+            </div>
+        </div>
+        <div class="buttons"></div>
+            <button id="hinzufuegenbutton"name="sent" value="1" type="submit"> Hinzufügen</button>
+        </form>
+        </div>
+    </div>
+    </div>
+
+    <div id="event"></div>
+    <script src="./workshop.js"></script>
+    <script src="../header.js"></script>
+</body>
+
+</html>
