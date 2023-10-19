@@ -1,0 +1,56 @@
+<!Doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="../1header/header.css">
+    <link rel="stylesheet" href="../Profilepage/Profil.css">
+    <link rel="stylesheet" href="../Profilepage/Profil_bearbeiten.css">
+      
+</head>
+
+
+
+<body>
+    <div id="header"> </div>
+    <br>
+    <form class="bodytext grid-container" id="formular" name="veranstaltungupdate" action="../../php_eingabe/AdminUserUpdate.php" method="post">
+        <div class="grid-item"><b>Datum:</b></div>
+        <div class="grid-item"><input type="date" id="datum" name="datum">
+        </div>
+
+        <div class="grid-item"><b>Ort:</b></div>
+        <div class="grid-item"><input type="text" id="ort" name="ort">
+        </div>
+
+        <div class="grid-item"><b>Startzeit:</b></div>
+        <div class="grid-item"><input type="time" id="startzeit" name="startzeit">
+        </div>
+
+        <div class="grid-item"><b>Endzeite:</b></div>
+        <div class="grid-item"><input type="time" id="endzeit" name="endzeit">
+        </div>
+
+        <div class="grid-item"><b>Workshop:</b></div>
+        <div class="grid-item"><input type="text" id="workshop" name="workshop">
+        </div>
+
+        <div class="grid-item"><b>Spezialisierung:</b></div>
+        <div class="grid-item"><input type="text" id="spezialisierung" name="spezialisierung">
+        </div>
+        <button name="test" value="1">Speichern</button>
+
+    </form>
+    <br>
+
+    <!-- <a href="Profil.html"> -->
+        <script src="../header.js"></script>
+        <script src="./veranstaltungbearbeiten.js"></script>
+        <script>
+            let params = new URLSearchParams(document.location.search);
+            let veranstaltungs_id = params.get("veranstaltungs_id");
+            document["veranstaltungupdate"].action = "../../php_eingabe/AdminVeranstaltungUpdate.php?veranstaltungs_id="+veranstaltungs_id;
+        </script>
+    <!-- </a> -->
+</body>
