@@ -1,5 +1,5 @@
 <?php
-$servername = "host.docker.internal";
+$servername = "";
 $username = "root";
 $password = "1234";
 $dbname = "SommerCamp";
